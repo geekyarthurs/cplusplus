@@ -37,7 +37,7 @@ int main()
             cin.ignore(300000, '\n');
             cin.sync();
             cin.clear();
-            cout << "Enter Name";
+            cout << "Enter Name: ";
             getline(cin, studentName);
             cout << "Enter Roll: ";
             cin >> roll;
@@ -81,11 +81,15 @@ void deleteStudent(int roll)
 
         getline(data_file, raw_str, ','); // roll number
 
+        if (raw_str.empty())
+        {
+            continue;
+        }
+
         roll_s = stoi(raw_str);
 
         getline(data_file, raw_str); //name
 
-        cout << roll_s << " " << roll << endl;
         if (roll_s != roll)
         {
             done = true;
@@ -114,13 +118,13 @@ void listStudent()
 
     while (!file.eof())
     {
-        getline(file, raw_str, ','); // roll number
+        getline(file, raw_str, ',');
 
         if (!raw_str.empty())
         {
             roll_s = stoi(raw_str);
             getline(file, raw_str); //name
-            cout << setw(17) << "ROLL NO:" << setw(18) << "NAME" << endl;
+            cout << setw(17) << "ROLL NO" << setw(18) << "NAME" << endl;
             cout << setw(15) << roll_s << setw(20) << raw_str << endl;
         }
         else
