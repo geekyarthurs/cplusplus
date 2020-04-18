@@ -35,7 +35,7 @@ int main()
             listStudent();
             break;
         case 2:
-            
+
             while (choice_char == 'y')
             {
                 cin.ignore(300000, '\n');
@@ -83,7 +83,7 @@ void deleteStudent(int roll)
 
     data_out_file.open("data2.dat", ios::in | ios::out | ios::trunc);
     data_file.open("data.dat", ios::in | ios::out);
-    
+
     while (!data_file.eof())
     {
 
@@ -100,12 +100,10 @@ void deleteStudent(int roll)
 
         if (roll_s != roll)
         {
-            
+
             data_out_file << roll_s << "," << raw_str << endl;
         }
     }
-
-    
 
     data_file.close();
     data_out_file.close();
@@ -126,12 +124,12 @@ void listStudent()
     while (!file.eof())
     {
         getline(file, raw_str, ',');
-        
+
         if (!raw_str.empty())
         {
             roll_s = stoi(raw_str);
             getline(file, raw_str); //name
-            
+
             cout << setw(15) << roll_s << setw(20) << raw_str << endl;
         }
         else

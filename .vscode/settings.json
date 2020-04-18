@@ -6,5 +6,6 @@
         "iosfwd": "cpp",
         "*.tcc": "cpp",
         "iomanip": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
